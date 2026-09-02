@@ -1,0 +1,121 @@
+numpy based project.
+
+import numpy as np
+
+print("=" * 40)
+print("    FITNESS STEP COUNTER")
+print("=" * 40)
+
+# Daily step count for 7 days
+steps = np.array([6500, 7200, 8100, 9000, 7800, 10500, 9500])
+
+print("\nDaily Steps:")
+print(steps)
+
+# Change in steps between days
+step_change = np.diff(steps)
+
+print("\nDaily Change in Steps:")
+print(step_change)
+
+# Total steps
+total_steps = np.sum(steps)
+
+print("\nTotal Weekly Steps:")
+print(total_steps)
+
+# Average steps
+avg_steps = np.mean(steps)
+
+print("\nAverage Daily Steps:")
+print(round(avg_steps, 2))
+
+# Maximum steps
+max_steps = np.max(steps)
+
+print("\nMaximum Steps:")
+print(max_steps)
+
+# Minimum steps
+min_steps = np.min(steps)
+
+print("\nMinimum Steps:")
+print(min_steps)
+
+# Day with highest steps
+max_day = np.argmax(steps)
+
+print("\nHighest Step Count:")
+print(f"Day {max_day + 1}: {steps[max_day]} steps")
+
+# Day with lowest steps
+min_day = np.argmin(steps)
+
+print("\nLowest Step Count:")
+print(f"Day {min_day + 1}: {steps[min_day]} steps")
+
+# Cumulative steps
+cumulative_steps = np.cumsum(steps)
+
+print("\nCumulative Steps:")
+print(cumulative_steps)
+
+# Percentage contribution
+percentage_steps = (steps / total_steps) * 100
+
+print("\nPercentage Contribution:")
+print(np.round(percentage_steps, 2))
+
+# Total movement variation
+total_variation = np.sum(np.abs(step_change))
+
+print("\nTotal Step Variation:")
+print(total_variation)
+
+# Median
+median_steps = np.median(steps)
+
+print("\nMedian Steps:")
+print(median_steps)
+
+# Standard deviation
+std_steps = np.std(steps)
+
+print("\nStandard Deviation:")
+print(round(std_steps, 2))
+
+# Range
+step_range = np.ptp(steps)
+
+print("\nStep Range:")
+print(step_range)
+
+# Goal achievement (8000 steps)
+goal_steps = steps[steps >= 8000]
+
+print("\nDays Achieving 8000+ Steps:")
+print(goal_steps)
+
+# Calories burned (Approx 0.04 calories per step)
+calories = steps * 0.04
+
+print("\nCalories Burned Per Day:")
+print(np.round(calories, 2))
+
+# Total calories burned
+total_calories = np.sum(calories)
+
+print("\nTotal Calories Burned:")
+print(round(total_calories, 2))
+
+print("\n" + "=" * 40)
+print("         FITNESS SUMMARY")
+print("=" * 40)
+print("Total Steps        :", total_steps)
+print("Average Steps      :", round(avg_steps, 2))
+print("Maximum Steps      :", max_steps)
+print("Minimum Steps      :", min_steps)
+print("Total Calories     :", round(total_calories, 2))
+print("Fitness Goal       :", "Achieved")
+print("=" * 40)
+print("Fitness Tracking Completed.")
